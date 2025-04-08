@@ -1,6 +1,7 @@
 @extends('web.app')
 
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Hero Start -->
     <section class="bg-half bg-light d-table w-100" style="background: url('{{asset('web/images/contact-detail.jpg')}}') center center;">
         <div class="bg-overlay bg-overlay-white"></div>
@@ -28,9 +29,8 @@
         <div class="row align-items-center">
             <div class="col-lg-5 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
                 <div class="card custom-form rounded border-0 shadow p-4">
-                    <form method="post" name="" action="mail.php">
-                        <p id="error-msg" class="mb-0"></p>
-                        <div id="simple-msg"></div>
+                    <form id="maincontact" action="{{ url('save-contactform') }}" method="post"
+                    enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -59,7 +59,7 @@
                                     <label class="form-label">Phone</label>
                                     <div class="form-icon position-relative">
                                         <i data-feather="book" class="fea icon-sm icons"></i>
-                                        <input name="phone" id="subject" class="form-control ps-5"
+                                        <input name="mobile" id="mobile" class="form-control ps-5"
                                             placeholder="Phone">
                                     </div>
                                 </div>
@@ -70,14 +70,11 @@
                                     <label class="form-label">Comments <span class="text-danger">*</span></label>
                                     <div class="form-icon position-relative">
                                         <i data-feather="message-circle" class="fea icon-sm icons clearfix"></i>
-                                        <textarea name="position" id="comments" rows="4" class="form-control ps-5" placeholder="Message"></textarea>
+                                        <textarea name="message" id="message" rows="4" class="form-control ps-5" placeholder="Message"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" value="/contact-us.html" name="url" />
-                        <input type="hidden" value="" name="campaign" />
-                        <input type="hidden" value="contact-us" name="page_name" />
                         <div class="row">
                             <div class="col-12">
                                 <div class="d-grid">
@@ -214,4 +211,77 @@
             </div><!--end col-->
         </div><!--end row-->
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            function capitalizeEachWord(str) {
+                return str.replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+            }
+            $('#maincontact').submit(function(e) {
+                // Prevent the default form submission
+                e.preventDefault();
+                // Get form data
+                var formData = new FormData($(this)[0]);
+
+                // Make an Ajax request
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(data) {
+                        var usernameValue = $('input[name="name"]').val();
+                        var capitalizedValue = capitalizeEachWord(usernameValue);
+                        if (data.success === true) {
+                            $('#maincontact')[0].reset();
+                            Swal.fire({
+                                icon: 'success',
+                                title: capitalizedValue +
+                                    '<br> Your Message has been sent',
+                                showConfirmButton: true
+                            });
+                        } else {
+                            alert('Something went wrong!');
+                        }
+                    },
+                    error: function(error) {
+                        // Parse the JSON response
+                        var responseJSON = error.responseJSON;
+
+                        // Check if there are errors
+                        if (responseJSON && responseJSON.errors) {
+                            var errorMessages = Object.values(responseJSON.errors);
+
+                            // Flatten the array of error messages
+                            var flattenedErrorMessages = errorMessages.reduce((acc, curr) => acc
+                                .concat(curr), []);
+                            // Display the error messages
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Validation Errors',
+                                html: flattenedErrorMessages.join('<br>')
+                            });
+                        } else {
+                            // If there are no specific errors, show a generic error message
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'An error occurred'
+                            });
+                        }
+                    }
+                });
+            });
+           
+        });
+    </script>
     @endsection

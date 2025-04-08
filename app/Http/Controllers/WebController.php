@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\MetaTag;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -9,109 +11,145 @@ class WebController extends Controller
     //index
     public function indexView()
     {
-        return view('web.index');
+        $meta = MetaTag::where('page_route',url('/'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.index',compact('headerdata'));
     }
 
     //about-us
     public function aboutUsView()
     {
-        return view('web.about-us');
+        $meta = MetaTag::where('page_route',url('/about-us'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.about-us',compact('headerdata'));
     }
 
     //purnpay-retailer
     public function purnpayRetailerView()
     {
-        return view('web.purnpay-retailer');
+        $meta = MetaTag::where('page_route',url('/purnpay-retailer'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.purnpay-retailer',compact('headerdata'));
     }
 
     //purnpay-distributor
     public function purnpayDistributorView()
     {
-        return view('web.purnpay-distributor');
+        $meta = MetaTag::where('page_route',url('/purnpay-distributor'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.purnpay-distributor',compact('headerdata'));
     }
 
     //purnpay-whitelable-partner
     public function purnpayWhitelablePartnerView()
     {
-        return view('web.purnpay-whitelable-partner');
+        $meta = MetaTag::where('page_route',url('/purnpay-whitelable-partner'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.purnpay-whitelable-partner',compact('headerdata'));
     }
 
     //purnpay-api-partner
     public function purnpayApiPartnerView()
     {
-        return view('web.purnpay-api-partner');
+        $meta = MetaTag::where('page_route',url('/purnpay-api-partner'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.purnpay-api-partner',compact('headerdata'));
     }
 
     //aadhar-enabled-payment-system
     public function aadharEnabledPaymentSystemView()
     {
-        return view('web.aadhar-enabled-payment-system');
+        $meta = MetaTag::where('page_route',url('/aadhar-enabled-payment-system'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.aadhar-enabled-payment-system',compact('headerdata'));
     }
 
     //emi-and-cash-collection
     public function emiAndCashCollectionView()
     {
-        return view('web.emi-and-cash-collection');
+        $meta = MetaTag::where('page_route',url('/emi-and-cash-collection'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.emi-and-cash-collection',compact('headerdata'));
     }
 
     //money-transfer
     public function moneyTransferView()
     {
-        return view('web.money-transfer');
+        $meta = MetaTag::where('page_route',url('/money-transfer'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.money-transfer',compact('headerdata'));
     }
 
     //payment-solutions
     public function paymentSolutionsView()
     {
-        return view('web.payment-solutions');
+        $meta = MetaTag::where('page_route',url('/payment-solutions'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.payment-solutions',compact('headerdata'));
     }
 
     //become-pancard-agent
     public function becomePancardAgentView()
     {
-        return view('web.become-pancard-agent');
+        $meta = MetaTag::where('page_route',url('/become-pancard-agent'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.become-pancard-agent',compact('headerdata'));
     }
 
     //pre-paid-cards
     public function prePaidCardsView()
     {
-        return view('web.pre-paid-cards');
+        $meta = MetaTag::where('page_route',url('/pre-paid-cards'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.pre-paid-cards',compact('headerdata'));
     }
 
     //micro-atm
     public function microAtmView()
     {
-        return view('web.micro-atm');
+        $meta = MetaTag::where('page_route',url('/micro-atm'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.micro-atm',compact('headerdata'));
     }
 
     //multi-recharge-distributorship
     public function multiRechargeDistributorshipView()
     {
-        return view('web.multi-recharge-distributorship');
+        $meta = MetaTag::where('page_route',url('/multi-recharge-distributorship'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.multi-recharge-distributorship',compact('headerdata'));
     }
 
     //insurance
     public function insuranceView()
     {
-        return view('web.insurance');
+        $meta = MetaTag::where('page_route',url('/insurance'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.insurance',compact('headerdata'));
     }
 
     //bank-account
     public function bankAccountView()
     {
-        return view('web.bank-account');
+        $meta = MetaTag::where('page_route',url('/bank-account'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.bank-account',compact('headerdata'));
     }
 
     //shop
     public function shopView()
     {
-        return view('web.shop');
+        $meta = MetaTag::where('page_route',url('/shop'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.shop',compact('headerdata'));
     }
 
     //blog
     public function blogView()
     {
-        return view('web.blog');
+        $meta = MetaTag::where('page_route',url('/blog'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.blog',compact('headerdata'));
     }
 
     //blog-details
@@ -123,24 +161,66 @@ class WebController extends Controller
     //contact-us
     public function contactUsView()
     {
-        return view('web.contact-us');
+        $meta = MetaTag::where('page_route',url('/contact-us'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.contact-us',compact('headerdata'));
     }
 
     //applynew
     public function applynewView()
     {
-        return view('web.applynew');
+        $meta = MetaTag::where('page_route',url('/applynew'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.applynew',compact('headerdata'));
     }
 
     //terms-and-conditions
     public function termsConditionsView()
     {
-        return view('web.terms-and-conditions');
+        $meta = MetaTag::where('page_route',url('/terms-and-conditions'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.terms-and-conditions',compact('headerdata'));
     }
 
     //privacy-policy
     public function privacyPolicyView()
     {
-        return view('web.privacy-policy');
+        $meta = MetaTag::where('page_route',url('/privacy-policy'))->where('status','active')->first();
+        $headerdata =  $meta->headerdata ?? [];
+        return view('web.privacy-policy',compact('headerdata'));
+    }
+
+    public function saveData(Request $request)
+    {
+        $request->validate(
+            [
+                'name' => 'required|string',
+                'mobile' => 'required|numeric|digits:10',
+                'email' => 'required|email',
+                'message' => 'required|string'
+            ],
+            [
+                'name.required' => ' Name is required!',
+                'name.string' => 'Invalid Name!',
+                'message.required' => 'Message is required!',
+                'message.string' => 'Invalid message!',
+                'email.required' => 'Email is required!',
+                'email.email' => 'Invalid email',
+                'mobile.required' => 'Mobile number is required!',
+                'mobile.numeric' => 'Invalid mobile number!',
+                'mobile.digits' => 'Mobile number must be 10 digit!',
+            ]
+        );
+        $contact = new Contact();
+        $contact->name = $request->input('name');
+        $contact->mobile = $request->input('mobile');
+        $contact->email = $request->input('email');
+        $contact->message = $request->input('message');
+        $result = $contact->save();
+        if ($result) {
+            return response()->json(['success' => true]);
+        }
+
+        return response()->json(['success' => false]);
     }
 }

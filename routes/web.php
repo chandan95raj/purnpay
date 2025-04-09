@@ -22,12 +22,13 @@ Route::get('/insurance', [WebController::class, 'insuranceView']);
 Route::get('/bank-account', [WebController::class, 'bankAccountView']);
 Route::get('/shop', [WebController::class, 'shopView']);
 Route::get('/blog', [WebController::class, 'blogView']);
-Route::get('/blog-details', [WebController::class, 'blogDetailsView']);
+Route::get('/blog-details/{ns_id}', [WebController::class, 'blogDetailsView']);
 Route::get('/contact-us', [WebController::class, 'contactUsView']);
 Route::get('/applynew', [WebController::class, 'applynewView']);
 Route::get('/terms-and-conditions', [WebController::class, 'termsConditionsView']);
 Route::get('/privacy-policy', [WebController::class, 'privacyPolicyView']);
 Route::post('/save-contactform', [WebController::class, 'saveData'])->name('save-contactform');
+Route::post('/save-joinform', [WebController::class, 'saveJoinData'])->name('save-joinform');
 
 // Admin routes
 Route::get('/adm',[AdminController::class,'signinView']);
@@ -40,6 +41,7 @@ Route::get('/edit-blog/{ns_id}',[AdminController::class,'editBlog']);
 Route::post('/update-blog-data',[AdminController::class,'updateBlogDataAjax']);
 Route::post('/delete-blog',[AdminController::class,'deleteBlogAjax']);
 Route::get('/manage-contacts',[AdminController::class,'manageContacts']);
+Route::get('/manage-enquiries',[AdminController::class,'manageEnquiries']);
 Route::get('/meta-setup',[AdminController::class,'metaSetup']);
 Route::post('/store-meta', [AdminController::class, 'store'])->name('store.meta');
 Route::get('/meta/edit/{id}', [AdminController::class, 'edit'])->name('meta.edit');

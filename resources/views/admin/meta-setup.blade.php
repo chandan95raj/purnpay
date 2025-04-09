@@ -30,42 +30,42 @@
                             <div class="form-group mb-3">
                                 <label class="form-label mb-0" for="page_name">Page Name</label>
                                 <input type="text" class="form-control page_name" name="page_name"
-                                    value="Homepage">
+                                    placeholder="Homepage">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group mb-3">
                                 <label class="form-label mb-0" for="page_name">Page Route</label>
                                 <input type="text" class="form-control page_route" name="page_route"
-                                    value="http://127.0.0.1:8000/">
+                                    placeholder="https://purnpay.com">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group mb-3">
                                 <label class="form-label mb-0" for="meta_title">Meta Title</label>
                                 <input type="text" class="form-control meta_title" name="meta_title"
-                                    value="No.1 Money Transfer Services Franchise in India | NextGen Payout Services for Businesses | Home ">
+                                    placeholder="No.1 Money Transfer Services Franchise in India | NextGen Payout Services for Businesses | Home ">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group mb-3">
                                 <label class="form-label mb-0" for="meta_description">Meta Description</label>
                                 <input type="text" class="form-control meta_description" name="meta_description"
-                                    value="Purn Pay  is No.1 money transfer franchise in India. We offer instant and real-time commission on every transaction. Choose Purn Pay for your payout services for business.">
+                                    placeholder="Purn Pay  is No.1 money transfer franchise in India. We offer instant and real-time commission on every transaction. Choose Purn Pay for your payout services for business.">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group mb-3">
                                 <label class="form-label mb-0" for="meta_keywords">Meta Keywords</label>
                                 <input type="text" class="form-control meta_keywords" name="meta_keywords"
-                                    value="Purnpay, AEPS, API, EMI &amp; Cash Collection, Money Transfer, Payment Solutions, Pancard Agent,  Pre-Paid Cards, , M-ATM, Utility Services,  Insurance,  Bank Account">
+                                    placeholder="Purnpay, AEPS, API, EMI &amp; Cash Collection, Money Transfer, Payment Solutions, Pancard Agent,  Pre-Paid Cards, , M-ATM, Utility Services,  Insurance,  Bank Account">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group mb-3">
                                 <label class="form-label mb-0" for="meta_url">Meta Url</label>
                                 <input type="text" class="form-control meta_url" name="meta_url"
-                                    value="https://purnpay.com/">
+                                    placeholder="https://purnpay.com">
                             </div>
                         </div>
                         <div class="col-lg-6">

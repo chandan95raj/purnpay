@@ -68,4 +68,21 @@
             </div>
         </div>
     </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card card-animate">
+            <div class="card-body">
+                <a href="{{ url('/manage-enquiries') }}" class="d-flex align-items-center">
+                    <div class="flex-grow-1 overflow-hidden">
+                        <h5 class="fw-medium text-muted text-truncate mb-0">
+                            Enquiries</h5>
+                    </div>
+                    <div class="avatar-sm flex-shrink-0">
+                        <span class="avatar-title bg-soft-success rounded fs-3">
+                            <i class="ri-message-3-line text-success"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

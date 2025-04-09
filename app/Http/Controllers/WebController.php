@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Contact;
+use App\Models\Enquiry;
 use App\Models\MetaTag;
 use Illuminate\Http\Request;
 
@@ -61,7 +63,8 @@ class WebController extends Controller
     {
         $meta = MetaTag::where('page_route',url('/aadhar-enabled-payment-system'))->where('status','active')->first();
         $headerdata =  $meta->headerdata ?? [];
-        return view('web.aadhar-enabled-payment-system',compact('headerdata'));
+        $allblog = Blog::where('ns_delete', '!=', '1')->orderBy('created_at','ASC')->get()->take(3);
+        return view('web.aadhar-enabled-payment-system',compact('headerdata','allblog'));
     }
 
     //emi-and-cash-collection
@@ -93,7 +96,8 @@ class WebController extends Controller
     {
         $meta = MetaTag::where('page_route',url('/become-pancard-agent'))->where('status','active')->first();
         $headerdata =  $meta->headerdata ?? [];
-        return view('web.become-pancard-agent',compact('headerdata'));
+        $allblog = Blog::where('ns_delete', '!=', '1')->orderBy('created_at','ASC')->get()->take(3);
+        return view('web.become-pancard-agent',compact('headerdata','allblog'));
     }
 
     //pre-paid-cards
@@ -149,13 +153,16 @@ class WebController extends Controller
     {
         $meta = MetaTag::where('page_route',url('/blog'))->where('status','active')->first();
         $headerdata =  $meta->headerdata ?? [];
-        return view('web.blog',compact('headerdata'));
+        $allblog = Blog::where('ns_delete', '!=', '1')->orderBy('created_at','ASC')->get();
+        return view('web.blog',compact('headerdata','allblog'));
     }
 
     //blog-details
-    public function blogDetailsView()
+    public function blogDetailsView($ns_id)
     {
-        return view('web.blog-details');
+        $singleblog = Blog::where('ns_delete', '!=', '1')->where('ns_id', '=', $ns_id)->first();
+        $headerdata =  $singleblog->headerdata ?? [];
+        return view('web.blog-details',compact('headerdata','singleblog'));
     }
 
     //contact-us
@@ -216,6 +223,40 @@ class WebController extends Controller
         $contact->mobile = $request->input('mobile');
         $contact->email = $request->input('email');
         $contact->message = $request->input('message');
+        $result = $contact->save();
+        if ($result) {
+            return response()->json(['success' => true]);
+        }
+
+        return response()->json(['success' => false]);
+    }
+
+    public function saveJoinData(Request $request)
+    {
+
+        $request->validate(
+            [
+                'name' => 'required|string',
+                'mobile' => 'required|numeric|digits:10',
+                'email' => 'required|email',
+                'position' => 'required|in:retailer,distributor,super distributor,whitelable partner,api'
+            ],
+            [
+                'name.required' => ' Name is required!',
+                'name.string' => 'Invalid Name!',
+                'position.required' => 'Join as Position is required!',
+                'email.required' => 'Email is required!',
+                'email.email' => 'Invalid email',
+                'mobile.required' => 'Mobile number is required!',
+                'mobile.numeric' => 'Invalid mobile number!',
+                'mobile.digits' => 'Mobile number must be 10 digit!',
+            ]
+        );
+        $contact = new Enquiry();
+        $contact->name = $request->input('name');
+        $contact->mobile = $request->input('mobile');
+        $contact->email = $request->input('email');
+        $contact->type = $request->input('position');
         $result = $contact->save();
         if ($result) {
             return response()->json(['success' => true]);

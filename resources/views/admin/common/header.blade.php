@@ -6,7 +6,7 @@
 
     <meta charset="utf-8" />
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
-    <title>PurnTech - Admin</title>
+    <title>PurnPay - Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- App favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin/assets/images/favicon.png') }}">
@@ -189,6 +189,12 @@
                             <a class="nav-link menu-link {{ request()->is('manage-contacts') ? 'active' : '' }}"
                                 href="{{ url('/manage-contacts') }}">
                                 <i class="ri-message-3-line"></i> <span data-key="t-widgets">Contact Messages</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link {{ request()->is('manage-enquiries') ? 'active' : '' }}"
+                                href="{{ url('/manage-enquiries') }}">
+                                <i class="ri-message-3-line"></i> <span data-key="t-widgets">Enquiries</span>
                             </a>
                         </li>
                         <li class="nav-item">

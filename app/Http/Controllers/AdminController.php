@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Contact;
+use App\Models\Enquiry;
 use App\Models\MetaTag;
 use App\Models\User;
 use Exception;
@@ -96,12 +97,16 @@ class AdminController extends Controller
                 'meta_type' => 'required|string|max:50',
                 'site_name' => 'required|string|max:255',
                 'meta_image' => 'required|string|max:255',
-                'schema' => 'nullable|string'
+                'org_schema' => 'nullable|string',
+                'business_schema' => 'nullable|string',
+                'rating_schema' => 'nullable|string'
             ], [
                 'nstitle.required' => 'Blog title is required!',
                 'nsdate.required' => 'Blog Date is required!',
                 'nsimg.required' => 'Blog Image is required !',
                 'nsimg.file' => 'Blog Image type is invalid !',
+                'nsimg.max' => 'The Blog Image field must not be greater than 2 MB',
+                'nsimg.mimes' => 'The Blog Image field must be a jpeg,png,jpg',
                 'nsdesc.required' => 'Blog Description is Required!',
             ]);
 
@@ -113,7 +118,9 @@ class AdminController extends Controller
                 "meta_type" => $request->meta_type,
                 "site_name" => $request->site_name,
                 "meta_image" => $request->meta_image,
-                "schema" => $request->schema,
+                "org_schema" => $request->org_schema,
+                "business_schema" => $request->business_schema,
+                "rating_schema" => $request->rating_schema,
             ];
 
             // return response()->json($request);
@@ -204,7 +211,9 @@ class AdminController extends Controller
                 'meta_type' => 'nullable|string|max:50',
                 'site_name' => 'nullable|string|max:255',
                 'meta_image' => 'nullable|string|max:255',
-                'schema' => 'nullable|string'            
+                'org_schema' => 'nullable|string',
+                'business_schema' => 'nullable|string',
+                'rating_schema' => 'nullable|string'           
             ], [
                 'ns_id.required' => 'Something went wrong',
                 'ns_id.numeric' => 'Something went wrong',
@@ -222,7 +231,9 @@ class AdminController extends Controller
                 "meta_type" => "website",
                 "site_name" => "PurnTech",
                 "meta_image" => "https://purntech.com/assets/img/logo/favicon.png",
-                "schema" => $request->schema,
+                "org_schema" => $request->org_schema,
+                "business_schema" => $request->business_schema,
+                "rating_schema" => $request->rating_schema,
             ];
 
             $news = Blog::find($request->ns_id);
@@ -287,6 +298,18 @@ class AdminController extends Controller
         }
     }
 
+    //manage-enquiries
+    public function manageEnquiries()
+    {
+        if (Session::has('adminuserid')) {
+            $cont_msgs = Enquiry::orderBy('id', 'DESC')->get();
+            echo view('admin.common.header');
+            echo view('admin.manage-enquiries', compact('cont_msgs'));
+            echo view('admin.common.footer');
+        } else {
+            return redirect('/adm');
+        }
+    }
 
     //meta-setup
     public function metaSetup()

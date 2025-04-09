@@ -102,9 +102,8 @@
                         </div>
                         <div class="flex-1 content">
                             <h6 class="title fw-bold mb-0">Email</h6>
-                            <a href="/cdn-cgi/l/email-protection#3f5c5c7f4f4a4d514f5e46115c5052"
-                                class="text-primary"><span class="__cf_email__"
-                                    data-cfemail="7d1e1e3d0d080f130d1c04531e1210">[email&#160;protected]</span></a>
+                            <a href="mailto:info@PurnPay.com"
+                                class="text-primary"><span>info@PurnPay.com</span></a>
                         </div>
                     </div>
 
@@ -115,9 +114,6 @@
                         <div class="flex-1 content">
                             <h6 class="title fw-bold mb-0">Phone</h6><a href="tel:9460978726"
                                 class="text-primary">9460978726</a>
-
-
-
                         </div>
                     </div>
 
@@ -127,7 +123,7 @@
                         </div>
                         <div class="flex-1 content ">
                             <h6 class="title fw-bold mb-0">Location</h6>
-                            <a href="https://g.page/PurnPay.com ?share" data-type="iframe"
+                            <a href="https://g.page/PurnPay.com?share" data-type="iframe"
                                 class="video-play-icon text-primary lightbox" target="_blank">View on Google map</a>
                         </div>
                     </div>

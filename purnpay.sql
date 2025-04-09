@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2025 at 02:25 PM
+-- Generation Time: Apr 09, 2025 at 02:45 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,6 +38,14 @@ CREATE TABLE `blog` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`ns_id`, `page_name`, `headerdata`, `ns_title`, `ns_img`, `ns_desc`, `ns_delete`, `created_at`, `updated_at`) VALUES
+(1, 'Blog Details', '{\"meta_title\":\"dfgdsg\",\"meta_description\":\"Purn Pay is No.1 money transfer franchise in India. We offer instant and real-time commission on every transaction. Choose Purn Pay for your payout services for business.\",\"meta_keywords\":\"Purnpay, AEPS, API, EMI & Cash Collection, Money Transfer, Payment Solutions, Pancard Agent,  Pre-Paid Cards, , M-ATM, Utility Services,  Insurance,  Bank Account\",\"meta_url\":null,\"meta_type\":\"website\",\"site_name\":\"PurnTech\",\"meta_image\":\"https:\\/\\/purntech.com\\/assets\\/img\\/logo\\/favicon.png\",\"org_schema\":\"<script type=\'application\\/ld+json\'>{\'@context\': \'https:\\/\\/schema.org\',\'@type\': \'Organization\',\'name\': \'PurnPay Blog\',\'logo\': \'https:\\/\\/purnpay.com\\/web\\/images\\/PurnPay-logo-header.png\',\'url\': \'https:\\/\\/purnpay.com\',\'address\': {\'@type\\\": \'PostalAddress\',\'streetAddress\': \'2-a\\/3,Front Side, Asaf Ali Road, Ajmeri Gate Extn.\',\'addressLocality\': \'Central Delhi\',\'addressRegion\': \'Delhi\',\'postalCode\': \'110002\',\'addressCountry\': \'India\'},\'sameAs\': [\'https:\\/\\/www.facebook.com\\/purnpay.com\\/\']}<\\/script>\",\"business_schema\":\"<script type=\'application\\/ld+json\'>{\\\"@context\\\":\\\"http:\\/\\/schema.org\\/\\\",\\\"@type\\\": \\\"LocalBusiness\\\",\\\"@id\\\": \\\"\\\",\\\"name\\\": \\\"PurnPay\\\",\\\"image\\\": \\\"https:\\/\\/purnpay.com\\/web\\/images\\/PurnPay-logo-header.png\\\",\\\"telephone\\\": \\\"91 9460978726\\\",\\\"url\\\": \\\"https:\\/\\/purnpay.com\\\", \\\"address\\\": {\\\"@type\\\": \\\"PostalAddress\\\",\\\"streetAddress\\\": \\\"2-a\\/3,Front Side, Asaf Ali Road, Ajmeri Gate Extn.\\\",\\\"addressLocality\\\": \\\"Central Delhi\\\",\\\"addressRegion\\\": \\\"Delhi\\\",\\\"postalCode\\\": \\\"110002\\\", \\\"addressCountry\\\": \\\"India\\\"},\\\"openingHoursSpecification\\\": [{\\\"@type\\\": \\\"OpeningHoursSpecification\\\",\\\"dayOfWeek\\\": [\\\"Monday\\\", \\\"Tuesday\\\", \\\"Wednesday\\\", \\\"Thursday\\\", \\\"Friday\\\", \\\"Saturday\\\"],\\\"opens\\\": \\\"09:00\\\",\\\"closes\\\": \\\"20:00\\\"},{\\\"@type\\\": \\\"OpeningHoursSpecification\\\",\\\"dayOfWeek\\\": [\\\"Sunday\\\"],\\\"opens\\\": \\\"10:00\\\",\\\"closes\\\": \\\"19:00\\\"}],\\\"sameAs\\\": [\\\"https:\\/\\/www.facebook.com\\/purnpay.com\\/\\\"]}<\\/script>\",\"rating_schema\":\"<script type=\'application\\/ld+json\'>{\\\"@context\\\":\\\"http:\\/\\/schema.org\\/\\\",\\\"@type\\\": \\\"Product\\\",\\\"name\\\": \\\"Purn Pay\\\",\\\"aggregateRating\\\": { \\\"@type\\\": \\\"AggregateRating\\\",\\\"ratingValue\\\" : \\\"4.9\\\",\\\"ratingCount\\\" : \\\"129\\\",\\\"reviewCount\\\" : \\\"129\\\"}}<\\/script>\"}', 'Test', 'blog1744184986.jpg', '<p>Testing</p>', 0, '2025-04-09 03:08:16', '2025-04-09 03:08:16'),
+(2, 'Blog Details', '{\"meta_title\":\"PurnPay is a state-of-the-art B2B2C Digital Platform, under the parent SaaS based Company PurnPay by PurnTechRetail Finlife India (OPC) Pvt. Ltd. registered under the Start-up India program.\",\"meta_description\":\"Purn Pay  is No.1 money transfer franchise in India. We offer instant and real-time commission on every transaction. Choose Purn Pay for your payout services for business.\",\"meta_keywords\":\"Purnpay, AEPS, API, EMI & Cash Collection, Money Transfer, Payment Solutions, Pancard Agent,  Pre-Paid Cards, , M-ATM, Utility Services,  Insurance,  Bank Account\",\"meta_url\":\"https:\\/\\/purnpay.com\\/\",\"meta_type\":\"website\",\"site_name\":\"PurnPay\",\"meta_image\":\"https:\\/\\/purnpay.com\\/web\\/images\\/PurnPay-Favicon.png\",\"org_schema\":\"<script type=\'application\\/ld+json\'>{\'@context\': \'https:\\/\\/schema.org\',\'@type\': \'Organization\',\'name\': \'PurnPay Blog\',\'logo\': \'https:\\/\\/purnpay.com\\/web\\/images\\/PurnPay-logo-header.png\',\'url\': \'https:\\/\\/purnpay.com\',\'address\': {\'@type\\\": \'PostalAddress\',\'streetAddress\': \'2-a\\/3,Front Side, Asaf Ali Road, Ajmeri Gate Extn.\',\'addressLocality\': \'Central Delhi\',\'addressRegion\': \'Delhi\',\'postalCode\': \'110002\',\'addressCountry\': \'India\'},\'sameAs\': [\'https:\\/\\/www.facebook.com\\/purnpay.com\\/\']}<\\/script>\",\"business_schema\":\"<script type=\'application\\/ld+json\'>{\\\"@context\\\":\\\"http:\\/\\/schema.org\\/\\\",\\\"@type\\\": \\\"LocalBusiness\\\",\\\"@id\\\": \\\"\\\",\\\"name\\\": \\\"PurnPay\\\",\\\"image\\\": \\\"https:\\/\\/purnpay.com\\/web\\/images\\/PurnPay-logo-header.png\\\",\\\"telephone\\\": \\\"91 9460978726\\\",\\\"url\\\": \\\"https:\\/\\/purnpay.com\\\", \\\"address\\\": {\\\"@type\\\": \\\"PostalAddress\\\",\\\"streetAddress\\\": \\\"2-a\\/3,Front Side, Asaf Ali Road, Ajmeri Gate Extn.\\\",\\\"addressLocality\\\": \\\"Central Delhi\\\",\\\"addressRegion\\\": \\\"Delhi\\\",\\\"postalCode\\\": \\\"110002\\\", \\\"addressCountry\\\": \\\"India\\\"},\\\"openingHoursSpecification\\\": [{\\\"@type\\\": \\\"OpeningHoursSpecification\\\",\\\"dayOfWeek\\\": [\\\"Monday\\\", \\\"Tuesday\\\", \\\"Wednesday\\\", \\\"Thursday\\\", \\\"Friday\\\", \\\"Saturday\\\"],\\\"opens\\\": \\\"09:00\\\",\\\"closes\\\": \\\"20:00\\\"},{\\\"@type\\\": \\\"OpeningHoursSpecification\\\",\\\"dayOfWeek\\\": [\\\"Sunday\\\"],\\\"opens\\\": \\\"10:00\\\",\\\"closes\\\": \\\"19:00\\\"}],\\\"sameAs\\\": [\\\"https:\\/\\/www.facebook.com\\/purnpay.com\\/\\\"]}<\\/script>\",\"rating_schema\":\"<script type=\'application\\/ld+json\'>{\\\"@context\\\":\\\"http:\\/\\/schema.org\\/\\\",\\\"@type\\\": \\\"Product\\\",\\\"name\\\": \\\"Purn Pay\\\",\\\"aggregateRating\\\": { \\\"@type\\\": \\\"AggregateRating\\\",\\\"ratingValue\\\" : \\\"4.9\\\",\\\"ratingCount\\\" : \\\"129\\\",\\\"reviewCount\\\" : \\\"129\\\"}}<\\/script>\"}', 'PurnPay is a state-of-the-art B2B2C Digital Platform, under the parent SaaS based Company PurnPay by PurnTechRetail Finlife India (OPC) Pvt. Ltd. registered under the Start-up India program.', 'blog1744185372.jpg', '<p class=\"ql-align-justify\">PurnPay is a state-of-the-art B2B2C Digital Platform, under the parent SaaS based Company PurnPay by PurnTechRetail Finlife India (OPC) Pvt. Ltd. registered under the Start-up India program.</p><p class=\"ql-align-justify\">We are a 2-year-old company currently focused on developing cutting edge technology to enable Fintech solutions. Our primary goal is to make India financially inclusive by catering to scarcity of financial connectivity in tier II/III cities of India. The organization has previously served in sectors of travel, telecommunications and e-commerce.</p><p class=\"ql-align-justify\">We, at PurnPay, enable local retail stores to offer Assisted Digital Financial Services like Cash Deposit, Cash Withdrawal, Balance Inquiry, Bill Payments, Micro ATM, Aadhaar Enabled Services (AEPS), DTH-Mobile Recharges, POS Services, SMS Payment, Insurance, Money Transfer etc.</p><p class=\"ql-align-justify\">We have leveraged artificial intelligence in our technology to make these financial transactions seamless, quick and simple. We continuously keep iterating our solutions and adapting changes as per feedback of our 35,000-active partner-network to develop this secure platform which offers a significantly superior user experience.</p><p class=\"ql-align-justify\">Every day we are inching closer to our goal of transforming tier II/III stores into a one-stop solution for all digital and financial services. These stores will act as an enabler to digitize cash for the customers visiting their outlets thereby empowering greater financial connectivity in semi urban and rural regions across India. We are working on enhancing the portfolio of our authorized partners by continuously adding new services where they earn maximum income with minimum investment.</p><p><br></p>', 0, '2025-04-06 02:26:12', '2025-04-09 02:26:12');
 
 -- --------------------------------------------------------
 
@@ -79,6 +87,33 @@ CREATE TABLE `contacts` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enquiries`
+--
+
+CREATE TABLE `enquiries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `type` enum('retailer','distributor','super distributor','whitelable partner','api') NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `enquiries`
+--
+
+INSERT INTO `enquiries` (`id`, `name`, `mobile`, `email`, `type`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'chandu', '7277408063', 'chandu@gmail.com', 'distributor', 0, '2025-04-09 07:07:29', '2025-04-09 07:07:29'),
+(2, 'chandu', '7277408063', 'chandanraaz@gmail.com', 'super distributor', 0, '2025-04-09 07:09:54', '2025-04-09 07:09:54'),
+(3, 'chandra', '7717784765', 'chandanra@gmail.com', 'whitelable partner', 0, '2025-04-09 07:10:38', '2025-04-09 07:10:38'),
+(4, 'ravi', '7547847847', 'ravi@gmail.com', 'api', 0, '2025-04-09 07:14:35', '2025-04-09 07:14:35');
 
 -- --------------------------------------------------------
 
@@ -229,8 +264,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('gsYpfyA7oBTGCFGr7pbeXavnqLig8xuEWErtvwjl', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo1OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozMjoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2NvbnRhY3QtdXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiTzRGeU1YNnlLUTJwaUl4N3p0bW1jSXg0aW02dlZHMlVXZ2psY1dVZyI7czoxMToiYWRtaW51c2VyaWQiO2k6MTtzOjEzOiJhZG1pbnVzZXJuYW1lIjtzOjU6IkFkbWluIjt9', 1744114360),
-('lpMyDXUl4GH73RhawKnxj9SlNCcXTIY029TngTYg', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoibWZPcXFKQVdnQVNSU3lEcndXUUxoeXlmeUlIWHBZc0ttampRQ3NSViI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9tZXRhLXNldHVwIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMToiYWRtaW51c2VyaWQiO2k6MTtzOjEzOiJhZG1pbnVzZXJuYW1lIjtzOjU6IkFkbWluIjt9', 1744114737);
+('OILBdRFSd5HpVO1KYgsnJE6K0jk3UcOdxlb1fd3Z', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZXNoWUdob04yUVdGSng5akVPejlzVWpBTkNlanlRa25TeFV5Z1g0NyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9tYW5hZ2UtYmxvZyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744182863),
+('oqyd2PBBH6JOfH3tGtto8oWYa4RxpFsBIEWB3rEI', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiR0JkQ3VBSTBBYzZqanZ4Nk1JdDY4Szh5QmZsb1NXWVVxTUprTVpuaCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9tYW5hZ2UtYmxvZyI7fXM6MTE6ImFkbWludXNlcmlkIjtpOjE7czoxMzoiYWRtaW51c2VybmFtZSI7czo1OiJBZG1pbiI7fQ==', 1744188325),
+('zhEiOSZeqA50Lj1GbHlYn011olpfOAct5zalpFNg', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWDZZRjRiZjRDZFZ6MEY3eWNsWXc1V1BtTnlwbmNEUkp6U2lxS3huRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744202675);
 
 -- --------------------------------------------------------
 
@@ -282,6 +318,12 @@ ALTER TABLE `cache_locks`
 -- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `enquiries`
+--
+ALTER TABLE `enquiries`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -345,13 +387,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `ns_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ns_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `enquiries`
+--
+ALTER TABLE `enquiries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

@@ -534,7 +534,9 @@
             <div class="modal-content">
                 <div class="col-md-12">
                     <center>
-                        <form class="" action="#" method="post">
+                        <form id="joincontact" action="{{ url('save-joinform') }}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
                             <h4>Join Now!</h4>
                             <div class="row">
                                 <div class="col-lg-12">
@@ -586,7 +588,7 @@
                                                 </path>
                                             </svg>
                                             <input type="tel" pattern="[0-9]{10}" id="number"
-                                                class="form-control ps-5" name="phone"
+                                                class="form-control ps-5" name="mobile"
                                                 placeholder="Phone (Enter 10 Digits)" required="">
                                         </div>
                                     </div>
@@ -606,11 +608,11 @@
                                             </svg>
                                             <select type="drop-down" id="option" class="form-control ps-5"
                                                 name="position" placeholder="Join as" required="">
-                                                <option value="Retailer">Retailer</option>
-                                                <option value="Distributor">Distributor</option>
-                                                <option value="Super_Distributor">Super Distributor</option>
-                                                <option value="Whitelable_Partner">Whitelable Partner</option>
-                                                <option value="API">API</option>
+                                                <option value="retailer">Retailer</option>
+                                                <option value="distributor">Distributor</option>
+                                                <option value="super distributor">Super Distributor</option>
+                                                <option value="whitelable partner">Whitelable Partner</option>
+                                                <option value="api">API</option>
                                             </select>
                                         </div>
                                     </div>
@@ -619,15 +621,12 @@
                                             <img src="captcha.php" width="220" height="60" />
                                             <input type="text" class="form-control ps-5" size="6" maxlength="5" name="captcha" value="" placeholder="Enter 5 digits here">
                                        </div>
-                                     --> <input type="hidden" value="" name="campaign" />
-                                <input type="hidden" value="https://app.purnpay.com/login" name="url" />
-                                <input type="hidden" value="Purn Pay" name="page_name" />
+                                     -->
                                 <div class="col-lg-12 mt-2 mb-0">
                                     <div class="d-grid">
                                         <button type="submit" class="btn btn-primary">Register Now</button><br>
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                                             id="cancel_modal">Cancel</button>
-
                                     </div>
                                 </div><!--end col-->
                             </div>
@@ -674,7 +673,82 @@
 
         }
     </style>
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
+        function capitalizeEachWord(str) {
+            return str.replace(/\b\w/g, function(char) {
+                return char.toUpperCase();
+            });
+        }
+        $('#joincontact').submit(function(e) {
+            // Prevent the default form submission
+            e.preventDefault();
+            // Get form data
+            var formData = new FormData($(this)[0]);
+
+            // Make an Ajax request
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    var usernameValue = $('input[name="name"]').val();
+                    var capitalizedValue = capitalizeEachWord(usernameValue);
+                    if (data.success === true) {
+                        $('#joincontact')[0].reset();
+                        Swal.fire({
+                            icon: 'success',
+                            title: capitalizedValue +
+                                '<br> Your Enquiry has been sent',
+                            showConfirmButton: true
+                        });
+                        var myModal = document.getElementById('myModal1');  
+                        var modalInstance = bootstrap.Modal.getInstance(myModal);  
+                        modalInstance.hide();
+
+                    } else {
+                        alert('Something went wrong!');
+                    }
+                },
+                error: function(error) {
+                    // Parse the JSON response
+                    var responseJSON = error.responseJSON;
+
+                    // Check if there are errors
+                    if (responseJSON && responseJSON.errors) {
+                        var errorMessages = Object.values(responseJSON.errors);
+
+                        // Flatten the array of error messages
+                        var flattenedErrorMessages = errorMessages.reduce((acc, curr) => acc
+                            .concat(curr), []);
+                        // Display the error messages
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Validation Errors',
+                            html: flattenedErrorMessages.join('<br>')
+                        });
+                    } else {
+                        // If there are no specific errors, show a generic error message
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'An error occurred'
+                        });
+                    }
+                }
+            });
+        });
+       
+    });
+</script>
     <div class="popup-button popup-button_mobile">
         <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#myModal1">
             <div class="btn btn-primary">Enquire Now</div>

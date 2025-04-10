@@ -16,7 +16,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="text-lg-end text-center text-primary">
-                    Made By <a href="https://purntech.com/" target="_blank"> PurnTech</a>
+                    Made By <a href="https://purnpay.com/" target="_blank"> PurnPay</a>
                 </div>
             </div>
         </div>

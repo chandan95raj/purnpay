@@ -4,7 +4,7 @@
 
 <!-- Start Hero -->
 <section class="bg-half-170 pb-0 bg-light d-table w-100 overflow-hidden padding_head_below"
-    style="background: url('images/shapes/shape2.png') top; z-index: 0;">
+    style="background: url('{{asset('web/images/shapes/shape2.png')}}') top; z-index: 0;">
     <div class="container">
         <div class="row align-items-center mt-5 mt-sm-0">
             <div class="col-md-6">
